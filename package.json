@@ -2,8 +2,12 @@
   "author": "Paul Vorbach <paul@vorb.de> (http://vorb.de)",
   "name": "MD5",
   "description": "function for hashing messages with MD5",
-  "tags": [ "md5", "hash", "encryption" ],
-  "version": "0.0.0",
+  "tags": [
+    "md5",
+    "hash",
+    "encryption"
+  ],
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/pvorb/node-md5.git"
@@ -18,5 +22,7 @@
   "dependencies": {
     "charenc": ">=0.0.1",
     "crypt": ">=0.0.1"
-  }
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
 }
