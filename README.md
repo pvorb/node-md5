@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5)
 # MD5
 
 a JavaScript function for hashing messages with MD5.
