@@ -1,5 +1,6 @@
-[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5)
 # MD5
+
+[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5)
 
 a JavaScript function for hashing messages with MD5.
 
@@ -27,13 +28,13 @@ ender build MD5
 ```javascript
 var md5 = require('MD5');
 
-console.log(md5("message"));
+md5("message");
 ```
 
-This will print:
+This will return the following string
 
 ```
-78e731027d8fd50ed642340b7c9a63b3
+"78e731027d8fd50ed642340b7c9a63b3"
 ```
 
 ## Bugs and Issues
@@ -51,6 +52,7 @@ The original implementation can be found in the
 
 ## License
 
+~~~
 Copyright © 2011-2012, Paul Vorbach.
 Copyright © 2009, Jeff Mott.
 
@@ -78,3 +80,4 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+~~~
