@@ -1,11 +1,13 @@
 {
   "author": "Paul Vorbach <paul@vorb.de> (http://vorb.de)",
   "name": "MD5",
-  "description": "function for hashing messages with MD5",
+  "description": "native js function for hashing messages with MD5",
   "tags": [
     "md5",
     "hash",
-    "encryption"
+    "encryption",
+    "native",
+    "message digest"
   ],
   "version": "1.0.0",
   "repository": {
@@ -16,13 +18,18 @@
     "url": "https://github.com/pvorb/node-md5/issues"
   },
   "main": "md5.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "engines": {
     "node": "*"
   },
   "dependencies": {
-    "charenc": ">=0.0.1",
-    "crypt": ">=0.0.1"
+    "charenc": ">= 0.0.1",
+    "crypt": ">= 0.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "~ 1.4.2"
+  },
   "optionalDependencies": {}
 }
