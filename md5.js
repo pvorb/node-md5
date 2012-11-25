@@ -8,7 +8,7 @@
     // Convert to byte array
     if (message.constructor == String)
       message = utf8.stringToBytes(message);
-    else if (typeof message != 'object')
+    else if (!Array.isArray(message))
       message = message.toString();
     // else, assume byte array already
 
