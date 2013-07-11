@@ -15,4 +15,10 @@ describe('MD5', function () {
     else
       assert.equal(md5(msg1), md5(msg1));
   });
+
+  it('should support Node.js Buffers', function() {
+    var buffer = new Buffer('message áßäöü', 'utf8');
+
+    assert.equal(md5(buffer), md5('message áßäöü'));
+  })
 });
