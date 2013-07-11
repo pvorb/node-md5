@@ -7,6 +7,7 @@ a JavaScript function for hashing messages with MD5.
 **Warning:** This is the source repository for the npm package
 [MD5](http://search.npmjs.org/#/MD5), not [md5](http://search.npmjs.org/#/md5).
 
+
 ## Installation
 
 You can use this package on the server side as well as the client side.
@@ -17,30 +18,48 @@ You can use this package on the server side as well as the client side.
 npm install MD5
 ```
 
-### [Ender](http://ender.no.de/):
 
-```
-ender build MD5
-```
+## API
+
+~~~ javascript
+md5(message)
+~~~
+
+  * `message` -- `String` or `Buffer`
+  * returns `String`
+
 
 ## Usage
 
-```javascript
+~~~ javascript
 var md5 = require('MD5');
 
-md5("message");
-```
+console.log(md5('message'));
+~~~
 
-This will return the following string
+This will print the following
 
-```javascript
-"78e731027d8fd50ed642340b7c9a63b3"
-```
+~~~ javascript
+78e731027d8fd50ed642340b7c9a63b3
+~~~
+
+It supports buffers, too
+
+~~~ javascript
+var fs = require('fs');
+var md5 = require('MD5');
+
+fs.readFile('example.txt', function(err, buf) {
+  console.log(md5(buf));
+});
+~~~
+
 
 ## Bugs and Issues
 
 If you encounter any bugs or issues, feel free to open an issue at
 [github](https://github.com/pvorb/node-md5/issues).
+
 
 ## Credits
 
@@ -49,6 +68,7 @@ of the MD5 algorithm that was published by Ronald L. Rivest in 1991. I needed a
 npm package of the algorithm, so I used Jeff’s implementation for this package.
 The original implementation can be found in the
 [CryptoJS](http://code.google.com/p/crypto-js/) project.
+
 
 ## License
 
