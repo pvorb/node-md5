@@ -8,6 +8,9 @@
     // Convert to byte array
     if (message.constructor == String)
       message = utf8.stringToBytes(message);
+    else if (typeof Buffer != 'undefined' &&
+        typeof Buffer.isBuffer == 'function' && Buffer.isBuffer(message))
+      message = Array.prototype.slice.call(message, 0);
     else if (!Array.isArray(message))
       message = message.toString();
     // else, assume byte array already
