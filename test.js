@@ -21,4 +21,14 @@ describe('MD5', function () {
 
     assert.equal(md5(buffer), md5('message áßäöü'));
   })
+
+  it('should be able to use a binary encoded string', function () {
+    var hash1 = md5('abc', { asString: true });
+    var hash2 = md5(hash1 + 'a', { asString: true, encoding : 'binary' });
+    var hash3 = md5(hash1 + 'a', { encoding : 'binary' });
+    // console.log('hash1', hash1);
+    // console.log('hash2', hash2);
+    // console.log('hash3', hash3);
+    assert.equal(hash3, '131f0ac52813044f5110e4aec638c169');
+  });
 });
