@@ -4,10 +4,13 @@
       bin = require('charenc').bin,
 
   // The core
-  md5 = function (message) {
+  md5 = function (message, options) {
     // Convert to byte array
     if (message.constructor == String)
-      message = utf8.stringToBytes(message);
+      if (options && options.encoding === 'binary') 
+        message = bin.stringToBytes(message);
+      else 
+        message = utf8.stringToBytes(message);
     else if (typeof Buffer != 'undefined' &&
         typeof Buffer.isBuffer == 'function' && Buffer.isBuffer(message))
       message = Array.prototype.slice.call(message, 0);
@@ -145,7 +148,7 @@
   md5._digestsize = 16;
 
   module.exports = function (message, options) {
-    var digestbytes = crypt.wordsToBytes(md5(message));
+    var digestbytes = crypt.wordsToBytes(md5(message, options));
     return options && options.asBytes ? digestbytes :
         options && options.asString ? bin.bytesToString(digestbytes) :
         crypt.bytesToHex(digestbytes);
