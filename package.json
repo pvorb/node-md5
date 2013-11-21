@@ -1,5 +1,8 @@
 {
   "author": "Paul Vorbach <paul@vorb.de> (http://vorb.de)",
+  "contributors": [
+    "salba"
+  ],
   "name": "MD5",
   "description": "native js function for hashing messages with MD5",
   "tags": [
