@@ -7,9 +7,9 @@
   md5 = function (message, options) {
     // Convert to byte array
     if (message.constructor == String)
-      if (options && options.encoding === 'binary') 
+      if (options && options.encoding === 'binary')
         message = bin.stringToBytes(message);
-      else 
+      else
         message = utf8.stringToBytes(message);
     else if (typeof Buffer != 'undefined' &&
         typeof Buffer.isBuffer == 'function' && Buffer.isBuffer(message))
