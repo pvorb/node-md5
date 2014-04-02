@@ -5,10 +5,6 @@
 
   // The core
   md5 = function (message, options) {
-    
-    if(typeof message === "undefined") {
-          return;
-    }
     // Convert to byte array
     if (message.constructor == String)
       if (options && options.encoding === 'binary')
@@ -152,11 +148,9 @@
   md5._digestsize = 16;
 
   module.exports = function (message, options) {
-    
-    if(typeof message === "undefined") {
-          return;
-    }
-    
+    if(typeof message == 'undefined')
+      return;
+
     var digestbytes = crypt.wordsToBytes(md5(message, options));
     return options && options.asBytes ? digestbytes :
         options && options.asString ? bin.bytesToString(digestbytes) :
