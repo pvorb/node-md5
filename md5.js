@@ -42,9 +42,6 @@
         II = md5._ii;
 
     for (var i = 0; i < m.length; i += 16) {
-      if(options && options.progressCallback instanceof Function) {
-        options.progressCallback(i * 100 / m.length);
-      }
 
       var aa = a,
           bb = b,
@@ -123,6 +120,11 @@
       b = (b + bb) >>> 0;
       c = (c + cc) >>> 0;
       d = (d + dd) >>> 0;
+
+      if(options && options.progressCallback instanceof Function) {
+        options.progressCallback((i+15) * 100 / m.length);
+      }
+
     }
 
     return crypt.endian([a, b, c, d]);
