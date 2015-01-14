@@ -56,7 +56,7 @@ fs.readFile('example.txt', function(err, buf) {
 });
 ~~~
 
-If you are making md5 hashes of large files to can register a progress callback
+If you are making md5 hashes of large files you can register a progress callback.
 
 ~~~~ javascript
 var progressFunction = function(percent) {
