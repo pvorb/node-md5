@@ -42,6 +42,9 @@
         II = md5._ii;
 
     for (var i = 0; i < m.length; i += 16) {
+      if(options && options.progressCallback instanceof Function) {
+        options.progressCallback(i * 100 / m.length);
+      }
 
       var aa = a,
           bb = b,
