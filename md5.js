@@ -120,6 +120,11 @@
       b = (b + bb) >>> 0;
       c = (c + cc) >>> 0;
       d = (d + dd) >>> 0;
+
+      if(options && options.progressCallback instanceof Function) {
+        options.progressCallback((i+15) * 100 / m.length);
+      }
+
     }
 
     return crypt.endian([a, b, c, d]);

@@ -1,5 +1,6 @@
 var md5 = require('./md5.js');
 var assert = require('assert');
+var should = require('should');
 
 describe('MD5', function () {
   it('should return the expected MD5 hash for "message"', function () {
@@ -20,7 +21,7 @@ describe('MD5', function () {
     var buffer = new Buffer('message áßäöü', 'utf8');
 
     assert.equal(md5(buffer), md5('message áßäöü'));
-  })
+  });
 
   it('should be able to use a binary encoded string', function () {
     var hash1 = md5('abc', { asString: true });
@@ -31,4 +32,16 @@ describe('MD5', function () {
     // console.log('hash3', hash3);
     assert.equal(hash3, '131f0ac52813044f5110e4aec638c169');
   });
+
+  it('should return progress in percent 0 to 100', function (done) {
+
+    md5("message", {progressCallback: function(p) {
+        (p).should.be.a.Number;
+        (p).should.be.within(0,100);
+
+        if(p === 100) done();
+      }
+    });
+  });
+
 });

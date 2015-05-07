@@ -57,6 +57,19 @@ fs.readFile('example.txt', function(err, buf) {
 });
 ~~~
 
+If you are making md5 hashes of large files you can register a progress callback.
+
+~~~~ javascript
+var progressFunction = function(percent) {
+    console.log("md5 hashing is " + percent "% complete");
+};
+
+fs.readFile('bigFile.iso', function(err, buf) {
+  console.log(md5(buf), {progressCallback: progressFunction});
+});
+
+~~~~
+
 
 ## Bugs and Issues
 
