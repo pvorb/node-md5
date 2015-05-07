@@ -7,8 +7,8 @@ a JavaScript function for hashing messages with MD5.
 **Warning:** MD5 is an insecure hashing algorithm. Don't use it unless you know
 what you are doing!
 
-**Warning:** This is the source repository for the npm package
-[MD5](http://search.npmjs.org/#/MD5), not [md5](http://search.npmjs.org/#/md5).
+**Warning:** ___This is the source repository for the npm package
+[MD5](https://www.npmjs.com/search?q=MD5), not [md5](https://www.npmjs.com/search?q=md5).___
 
 ## Installation
 
