@@ -4,11 +4,12 @@
 
 a JavaScript function for hashing messages with MD5.
 
+**Warning: _This is the source repository for the npm package
+[MD5](https://www.npmjs.com/package/MD5), not
+[md5](https://www.npmjs.com/package/md5)._**
+
 **Warning:** MD5 is an insecure hashing algorithm. Don't use it unless you know
 what you are doing!
-
-**Warning:** This is the source repository for the npm package
-[MD5](http://search.npmjs.org/#/MD5), not [md5](http://search.npmjs.org/#/md5).
 
 ## Installation
 
@@ -16,9 +17,9 @@ You can use this package on the server side as well as the client side.
 
 ### [Node.js](http://nodejs.org/):
 
-```
+~~~
 npm install MD5
-```
+~~~
 
 
 ## API
