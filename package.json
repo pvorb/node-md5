@@ -34,5 +34,6 @@
   "devDependencies": {
     "mocha": "~ 1.4.2"
   },
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "license": "BSD-3-Clause"
 }
