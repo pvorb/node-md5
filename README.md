@@ -8,9 +8,6 @@ a JavaScript function for hashing messages with MD5.
 [MD5](https://www.npmjs.com/package/MD5), not
 [md5](https://www.npmjs.com/package/md5)._**
 
-**Warning:** MD5 is an insecure hashing algorithm. Don't use it unless you know
-what you are doing!
-
 ## Installation
 
 You can use this package on the server side as well as the client side.
