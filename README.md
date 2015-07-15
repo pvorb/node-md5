@@ -1,74 +1,14 @@
 # MD5
 
-[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5)
+**TL;DR:** _This module is deprecated, use lowercase md5@>=2.x from now on._
 
-a JavaScript function for hashing messages with MD5.
-
-**Warning: _This is the source repository for the npm package
-[MD5](https://www.npmjs.com/package/MD5), not
-[md5](https://www.npmjs.com/package/md5)._**
-
-## Installation
-
-You can use this package on the server side as well as the client side.
-
-### [Node.js](http://nodejs.org/):
-
-~~~
-npm install MD5
-~~~
-
-
-## API
-
-~~~ javascript
-md5(message)
-~~~
-
-  * `message` -- `String` or `Buffer`
-  * returns `String`
-
-
-## Usage
-
-~~~ javascript
-var md5 = require('MD5');
-
-console.log(md5('message'));
-~~~
-
-This will print the following
-
-~~~
-78e731027d8fd50ed642340b7c9a63b3
-~~~
-
-It supports buffers, too
-
-~~~ javascript
-var fs = require('fs');
-var md5 = require('MD5');
-
-fs.readFile('example.txt', function(err, buf) {
-  console.log(md5(buf));
-});
-~~~
-
-
-## Bugs and Issues
-
-If you encounter any bugs or issues, feel free to open an issue at
-[github](https://github.com/pvorb/node-md5/issues).
-
-
-## Credits
-
-This package is based on the work of Jeff Mott, who did a pure JS implementation
-of the MD5 algorithm that was published by Ronald L. Rivest in 1991. I needed a
-npm package of the algorithm, so I used Jeff’s implementation for this package.
-The original implementation can be found in the
-[CryptoJS](http://code.google.com/p/crypto-js/) project.
-
+For years, there has been a lot of confusion with this module since there were
+two MD5 modules on npm, one called ["MD5"](https://www.npmjs.com/package/MD5)
+(uppercase, the module you are looking at) as well as [one by AJ ONeal called
+"md5"](https://github.com/coolaj86/jsMD5) (lowercase). With version 2.0.0, only
+the implementation in this git repository stays on NPM, but its name changes
+from uppercase to lowercase. Old versions of both modules are marked deprecated.
+From now on, please use lowercase md5 with versions >= 2.0.0.
 
 ## License
 
