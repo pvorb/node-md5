@@ -1,6 +1,7 @@
 (function(){
   var crypt = require('crypt'),
       utf8 = require('charenc').utf8,
+      isBuffer = require('is-buffer'),
       bin = require('charenc').bin,
 
   // The core
@@ -11,8 +12,7 @@
         message = bin.stringToBytes(message);
       else
         message = utf8.stringToBytes(message);
-    else if (typeof Buffer != 'undefined' &&
-        typeof Buffer.isBuffer == 'function' && Buffer.isBuffer(message))
+    else if (isBuffer(message))
       message = Array.prototype.slice.call(message, 0);
     else if (!Array.isArray(message))
       message = message.toString();
