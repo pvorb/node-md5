@@ -4,10 +4,6 @@
 
 a JavaScript function for hashing messages with MD5.
 
-**Warning: _This is the source repository for the npm package
-[MD5](https://www.npmjs.com/package/MD5), not
-[md5](https://www.npmjs.com/package/md5)._**
-
 ## Installation
 
 You can use this package on the server side as well as the client side.
@@ -15,7 +11,7 @@ You can use this package on the server side as well as the client side.
 ### [Node.js](http://nodejs.org/):
 
 ~~~
-npm install MD5
+npm install md5
 ~~~
 
 
@@ -32,7 +28,7 @@ md5(message)
 ## Usage
 
 ~~~ javascript
-var md5 = require('MD5');
+var md5 = require('md5');
 
 console.log(md5('message'));
 ~~~
@@ -47,12 +43,21 @@ It supports buffers, too
 
 ~~~ javascript
 var fs = require('fs');
-var md5 = require('MD5');
+var md5 = require('md5');
 
 fs.readFile('example.txt', function(err, buf) {
   console.log(md5(buf));
 });
 ~~~
+
+## Versions
+
+Before version 2.0.0 there were two packages called md5 on npm, one lowercase,
+one uppercase (the one you're looking at). As of version 2.0.0, all new versions
+of this module will go to lowercase [md5](https://www.npmjs.com/package/md5) on
+npm. To use the correct version, users of this module will have to change their
+code from `require('MD5')` to `require('md5')` if they want to use versions >=
+2.0.0.
 
 
 ## Bugs and Issues
@@ -73,7 +78,7 @@ The original implementation can be found in the
 ## License
 
 ~~~
-Copyright © 2011-2012, Paul Vorbach.
+Copyright © 2011-2015, Paul Vorbach.
 Copyright © 2009, Jeff Mott.
 
 All rights reserved.
