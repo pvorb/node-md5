@@ -24,13 +24,10 @@
   "scripts": {
     "test": "mocha"
   },
-  "engines": {
-    "node": "*"
-  },
   "dependencies": {
-    "charenc": ">= 0.0.1",
-    "crypt": ">= 0.0.1",
-    "is-buffer": "^1.0.2"
+    "charenc": "~ 0.0.1",
+    "crypt": "~ 0.0.1",
+    "is-buffer": "~ 1.0.2"
   },
   "devDependencies": {
     "mocha": "~ 1.4.2"
