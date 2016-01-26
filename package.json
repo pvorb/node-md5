@@ -26,10 +26,10 @@
   "dependencies": {
     "charenc": "~ 0.0.1",
     "crypt": "~ 0.0.1",
-    "is-buffer": "~ 1.0.2"
+    "is-buffer": "~ 1.1.1"
   },
   "devDependencies": {
-    "mocha": "~ 1.4.2"
+    "mocha": "~ 2.3.4"
   },
   "optionalDependencies": {},
   "license": "BSD-3-Clause"
