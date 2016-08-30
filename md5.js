@@ -148,7 +148,7 @@
   md5._digestsize = 16;
 
   module.exports = function (message, options) {
-    if(typeof message == 'undefined')
+    if(message === undefined || message === null)
       return;
 
     var digestbytes = crypt.wordsToBytes(md5(message, options));
