@@ -6,6 +6,14 @@ describe('MD5', function () {
     assert.equal('78e731027d8fd50ed642340b7c9a63b3', md5('message'));
   });
 
+  it('should return "undefined" for "undefined"', function () {
+    assert.equal(undefined, md5(undefined));
+  });
+
+  it('should return "undefined" for "null"', function () {
+    assert.equal(undefined, md5(null));
+  });
+
   it('should not return the same hash for random numbers twice', function () {
     var msg1 = Math.floor((Math.random() * 100000) + 1) + (new Date).getTime();
     var msg2 = Math.floor((Math.random() * 100000) + 1) + (new Date).getTime();
