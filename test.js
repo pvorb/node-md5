@@ -3,7 +3,7 @@ var assert = require('assert');
 
 describe('md5', function () {
 
-  it('should throw an error for an unfined value', function() {
+  it('should throw an error for an undefined value', function() {
     assert.throws(function() {
       md5(undefined);
     });
