@@ -3,10 +3,14 @@ var assert = require('assert');
 
 describe('md5', function () {
 
-  it('should throw an error for `undefined`', function() {
+  it('should throw an error for an undefined value', function() {
     assert.throws(function() {
       md5(undefined);
     });
+  });
+
+  it('should allow the hashing of the string `undefined`', function() {
+    assert.equal('5e543256c480ac577d30f76f9120eb74', md5('undefined'));
   });
 
   it('should throw an error for `null`', function() {
