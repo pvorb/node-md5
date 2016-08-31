@@ -148,7 +148,7 @@
   md5._digestsize = 16;
 
   module.exports = function (message, options) {
-    if (message === 'undefined' || message === null)
+    if (message === undefined || message === null)
       throw new Error('Illegal argument ' + message);
 
     var digestbytes = crypt.wordsToBytes(md5(message, options));
