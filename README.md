@@ -1,6 +1,6 @@
 # MD5
 
-[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5)
+[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5) [![info badge](https://img.shields.io/npm/dt/md5.svg)](http://npm-stat.com/charts.html?package=md5)
 
 a JavaScript function for hashing messages with MD5.
 
