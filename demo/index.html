@@ -1,47 +1,57 @@
-<input type="file" id="input">
-<output id="output"></output>
+<input type="file" id="input" multiple>
+<table>
+  <thead>
+    <tr><th>file</th><th>type</th><th>size</th><th>md5</th><th>duration</th></tr>
+  </thead>
+  <tbody id="output"></tbody>
+</table>
 <style>
-output::before {
-  content: "output:";
+body {
+  margin: 1em 2em;
 }
-output {
-  display: block;
-  padding: 1em;
-  margin: 1em;
-  outline: 1px solid gray;
-  white-space: pre-wrap;
+td {
+  padding: .5em 1em;
 }
+table {
+  min-width: 600px;
+  margin-top: 1em;
+}
+td:nth-child(4) {
+  font-family: monospace;
+}
+
 </style>
 <script src="../dist/md5.min.js"></script>
 <script>
 
 
-function readAsArrayBuffer(file){
-  return new Promise(function(resolve) {
+input.onchange = function(e) {
+  output.innerHTML = '';
+
+  Array.from(input.files).forEach(function(file, i) {
+
+    var tr = output.insertRow();
+    [file.name, file.type, file.size].forEach(function(val){
+      var td = tr.insertCell();
+      td.textContent = val;
+    });
+
     var reader = new FileReader();
-    reader.readAsArrayBuffer(file)
+    reader.readAsArrayBuffer(input.files[i])
     reader.onload = function(e) {
-      resolve(e.target.result)
+
+      var buffer = e.target.result;
+
+      var now = performance.now();
+      var hash = MD5(new Uint8Array(buffer));
+      var after = performance.now() - now;
+
+      [hash, after.toFixed(2)+' ms'].forEach(function(val){
+        var td = tr.insertCell();
+        td.textContent = val;
+      });
     };
   });
-}
-
-input.onchange = function(e) {
-  var file = input.files[0];
-  readAsArrayBuffer(file)
-  .then(buffer => {
-    console.log(buffer);
-    var now = performance.now();
-    var hash = MD5(buffer);
-    var after = performance.now() - now;
-    output.innerHTML = `
-      file: ${file.name}
-      size: ${file.size} bytes
-      type: ${file.type}
-      md5: ${hash}
-      duration: ${after.toFixed(2)} ms 
-    `;
-  })
 }
 
 
