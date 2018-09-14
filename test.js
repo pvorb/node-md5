@@ -46,4 +46,30 @@ describe('md5', function () {
     var hash3 = md5(hash1 + 'a', { encoding : 'binary' });
     assert.equal(hash3, '131f0ac52813044f5110e4aec638c169');
   });
+
+  it('should support Uint8Array', function() {
+    // Polyfills
+    if (!Array.from) {
+      Array.from = function(src, fn) {
+        var result = new Array(src.length);
+        for (var i = 0; i < src.length; ++i)
+          result[i] = fn(src[i]);
+        return result;
+      };
+    }
+    if (!Uint8Array.from) {
+      Uint8Array.from = function(src) {
+        var result = new Uint8Array(src.length);
+        for (var i = 0; i < src.length; ++i)
+          result[i] = src[i];
+        return result;
+      };
+    }
+
+    var message = 'foobarbaz';
+    var u8arr = Uint8Array.from(
+      Array.from(message, function(c) { return c.charCodeAt(0); }));
+    var u8aHash = md5(u8arr);
+    assert.equal(u8aHash, md5(message));
+  });
 });
