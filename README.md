@@ -4,7 +4,7 @@
 
 a JavaScript function for hashing messages with MD5.
 
-node-md5 is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
+node-md5 is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial  
 <a href="https://tracking.gitads.io/?repo=node-md5"><img src="https://images.gitads.io/node-md5" alt="GitAds"/></a>
 
 ## Installation
