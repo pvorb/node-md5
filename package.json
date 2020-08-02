@@ -25,9 +25,9 @@
     "webpack": "webpack -p"
   },
   "dependencies": {
-    "charenc": "~0.0.1",
-    "crypt": "~0.0.1",
-    "is-buffer": "~1.1.1"
+    "charenc": "0.0.2",
+    "crypt": "0.0.2",
+    "is-buffer": "~1.1.6"
   },
   "devDependencies": {
     "mocha": "~2.3.4",
