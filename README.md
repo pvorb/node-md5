@@ -24,7 +24,7 @@ npm install md5
 md5(message)
 ~~~
 
-  * `message` -- `String`, `Buffer`, `Array` or `Uint8Array`
+  * `message` -- `String`,`Number`,`Buffer`, `Array` or `Uint8Array`
   * returns `String`
 
 
