@@ -14,6 +14,8 @@
         message = utf8.stringToBytes(message);
     else if (isBuffer(message))
       message = Array.prototype.slice.call(message, 0);
+    else if ( typeof message === "number" )
+      message = Buffer.from(String(message),"utf-8")
     else if (!Array.isArray(message) && message.constructor !== Uint8Array)
       message = message.toString();
     // else, assume byte array already
