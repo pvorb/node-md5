@@ -40,6 +40,10 @@ describe('md5', function () {
     assert.equal(md5(buffer), md5('message áßäöü'));
   })
 
+  it('should support Node.js Numbers', function() {
+    assert.equal(md5(100), "f899139df5e1059396431415e770c6dd");
+  })
+
   it('should be able to use a binary encoded string', function() {
     var hash1 = md5('abc', { asString: true });
     var hash2 = md5(hash1 + 'a', { asString: true, encoding : 'binary' });
