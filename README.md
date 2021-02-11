@@ -31,7 +31,7 @@ md5(message)
 ## Usage
 
 ~~~ javascript
-var md5 = require('md5');
+const md5 = require('md5');
 
 console.log(md5('message'));
 ~~~
@@ -45,8 +45,8 @@ This will print the following
 It supports buffers, too
 
 ~~~ javascript
-var fs = require('fs');
-var md5 = require('md5');
+const fs = require('fs');
+const md5 = require('md5');
 
 fs.readFile('example.txt', function(err, buf) {
   console.log(md5(buf));
