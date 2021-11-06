@@ -32,7 +32,8 @@ input.onchange = function(e) {
   .then(buffer => {
     console.log(buffer);
     var now = performance.now();
-    var hash = MD5(buffer);
+    var typedArray = new Int32Array(buffer, 0, buffer.byteLength / 4);
+    var hash = MD5(typedArray);
     var after = performance.now() - now;
     output.innerHTML = `
       file: ${file.name}
