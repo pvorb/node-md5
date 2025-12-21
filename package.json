@@ -31,7 +31,7 @@
     "is-buffer": "~1.1.6"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
+    "mocha": "~10.2.0",
     "webpack": "~2.4.1"
   },
   "optionalDependencies": {},
