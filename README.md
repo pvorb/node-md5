@@ -18,11 +18,31 @@ npm install md5
 ## API
 
 ~~~ javascript
-md5(message)
+md5(message, options)
 ~~~
 
   * `message` -- `String`, `Buffer`, `Array` or `Uint8Array`
-  * returns `String`
+  * `options` -- optional `Object`, described below
+  * returns a lowercase hexadecimal `String` by default
+
+String messages are encoded as UTF-8 by default. Buffers, arrays and typed
+arrays are treated as bytes.
+
+| Option | Default | Effect |
+| --- | --- | --- |
+| `asBytes` | `false` | Return the digest as an array of 16 byte values. |
+| `asString` | `false` | Return the digest as a 16-character binary string, with each character representing one byte. |
+| `encoding` | UTF-8 | Set to `'binary'` to treat a string message as binary (Latin-1) bytes instead of UTF-8. This affects the input, not the digest format. |
+
+If both `asBytes` and `asString` are true, `asBytes` takes precedence.
+
+~~~ javascript
+md5('message', { asBytes: true }).length; // 16
+md5('message', { asString: true }).length; // 16
+
+md5('é'); // '66ddcd97cfdeabb2f6fb8a999b4bc76f' (UTF-8 input)
+md5('é', { encoding: 'binary' }); // '3406877694691ddd1dfb0aca54681407'
+~~~
 
 
 ## Usage
